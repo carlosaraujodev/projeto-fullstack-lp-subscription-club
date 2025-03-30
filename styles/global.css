@@ -48,3 +48,17 @@
     --link: 500 .875rem var(--font-family);
     --tag: 700 .625rem var(--font-family);
 }
+
+body{
+    background: var(--shape-background);
+    display: grid;
+    place-content: center;
+
+}
+
+@media (width >= 90em){
+    body{        
+        margin-inline: auto;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,100 @@
+#hero {
+    display: grid;
+    gap: 3rem;
+    padding: 1.25rem 1.25rem 12.0625rem 1.25rem;
+    background-image: url(../assets/hero-background.png);
+    background-position: center;
+    background-size: cover;
+    background-clip: padding-box;
+
+    & nav {
+        display: flex;
+        justify-content: space-between;
+
+        & a .logo {
+            height: 3rem;
+            width: 5rem;
+            background-image: url(../assets/logo/logo-symbol.svg);
+            /* object-fit: cover; */
+            
+        }
+
+        button {
+            height: fit-content;
+            padding: .75rem 1.25rem;
+            background: var(--pink-dark);
+            border: none;
+            border-radius: .5rem;
+            cursor: pointer;
+
+            color: var(--text-title);
+            font: var(--button);
+
+            transition: background 200ms;
+
+            &:hover{
+                background: var(--pink-base);
+            }
+        }
+    }
+
+    & section {
+        max-width: 20.9375rem;
+        text-align: center;
+        display: grid;
+        gap: 1rem;
+
+        & h1 {
+            color: var(--text-title);
+            font: 700 1.75rem var(--font-family);
+        }
+
+        & p {
+            color: var(--text-body);
+            font: 400 .875rem var(--font-family);
+        }
+    }
+
+}
+
+@media (width >=90em) {
+    #hero {
+        width: 100vw;
+        max-width: 120rem;
+        overflow: hidden;
+        padding:3.5rem 10rem 29.375rem 10rem  ;
+        gap: 10.25rem;
+
+        & nav {
+            display: flex;
+
+            & a .logo {
+                background-image: url(../assets/logo/logo-horizontal.svg);
+                width: 14.375rem;
+                height: 3.625rem;
+            }
+
+            & button{
+                align-self: center;
+            }
+        }
+
+        & section{
+            margin: auto;
+            gap: 2rem;
+            max-width: 41rem;
+
+            & h1{
+                font: var(--title-lg);
+            }
+
+            & p{
+                max-width: 35.5rem;
+                margin-inline: auto;
+                font: var(--body-lg);
+            }
+        }
+
+
+    }
+}
