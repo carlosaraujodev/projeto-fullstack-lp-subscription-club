@@ -1,0 +1,130 @@
+#info {
+    display: flex;
+    position: relative;
+    padding: 5rem 1.25rem;
+
+    justify-content: center;
+
+    & p {
+        max-width: 20.9375rem;
+        font: 500 1rem/1.4 var(--font-family);
+        color: var(--text-body);
+        text-align: center;
+
+        animation: text-appear linear backwards;
+        animation-timeline: view();
+        animation-range: 100px 200px;
+    }
+
+    & img {
+        position: absolute;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    & img[src*="spellbook"] {
+        top: 1.75rem;
+        right: 4.625rem;
+        transform: rotate(15deg);
+
+        animation: image-appear 500ms 1s both;
+        animation-timeline: view();
+        animation-range: 100px 200px;
+    }
+
+    & img[src*="planchette"] {
+        bottom: 3.125rem;
+        left: .875rem;
+        transform: rotate(-30deg);
+
+        animation: image-appear 800ms 10s ease-in both;
+        animation-timeline: view();
+        animation-range: 100px 200px;
+    }
+
+    & img[src*="ball"] {
+        bottom: 2rem;
+        right: 1.25rem;
+        transform: rotate(15deg);
+
+        animation: image-appear 500ms 2s ease-in both;
+        animation-timeline: view();
+        animation-range: 100px 200px;
+    }
+}
+
+@media (width >=90em) {
+    #info {
+        padding: 13.125rem 9.5rem 14.875rem;
+        min-width: 71rem;
+        margin-inline: auto;
+
+        & p {
+            max-width: 71rem;
+            font: var(--subtitle);
+
+            & span {
+                color: var(--blue-light);
+                font-weight: 700;
+            }
+        }
+
+        & img {
+            width: 4.5rem;
+            height: 4.5rem;
+            transition: 300ms;
+
+            &:hover {
+                rotate: 10deg;
+                scale: 1.1;
+            }
+        }
+
+        & img[src*="spellbook"] {
+            top: 6.5rem;
+            right: auto;
+            transform: rotate(20deg);
+
+
+        }
+
+        & img[src*="planchette"] {
+            bottom: 9.375rem;
+            left: 9.5rem;
+            transform: rotate(100deg);
+
+
+
+        }
+
+        & img[src*="ball"] {
+            bottom: 9.75rem;
+            right: 7.375rem;
+            transform: rotate(-15deg);
+
+
+        }
+    }
+}
+
+@keyframes text-appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes image-appear {
+    0% {
+        scale: 0;
+        opacity: 1;
+    }
+
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}

@@ -59,6 +59,6 @@ body{
 @media (width >= 90em){
     body{        
         margin-inline: auto;
-        overflow: hidden;
+        overflow-x: hidden;
     }
 }
