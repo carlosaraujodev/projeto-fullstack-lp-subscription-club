@@ -238,7 +238,7 @@
                     & span:nth-child(6) {
                         bottom: -7.5rem;
                         right: -8rem;
-                        
+
                         animation: appear-assets 800ms ease-in-out;
                     }
                 }
@@ -247,8 +247,8 @@
     }
 }
 
-@keyframes appear-assets{
-    0%{
+@keyframes appear-assets {
+    0% {
         scale: 0;
         opacity: 0;
         top: 50%;
@@ -257,12 +257,12 @@
         right: 50%;
     }
 
-    40%{
+    40% {
         scale: 0;
         opacity: 0;
     }
 
-    100%{
+    100% {
         scale: 1;
         opacity: 1;
     }

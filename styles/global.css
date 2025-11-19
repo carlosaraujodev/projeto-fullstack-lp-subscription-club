@@ -6,7 +6,7 @@
     -moz-osx-font-smoothinf: grayscale;
 }
 
-:root { 
+:root {
     /* pink */
     --pink-light: #C59DD2;
     --pink-base: #9547A5;
@@ -49,15 +49,19 @@
     --tag: 700 .625rem var(--font-family);
 }
 
-body{
+body {
     background: var(--shape-background);
     display: grid;
     place-content: center;
+    overflow-x: hidden;
+    max-width: 24rem;
+    margin: auto;
+    justify-content: center;
 
 }
 
-@media (width >= 90em){
-    body{        
+@media (width >=90em) {
+    body {
         margin-inline: auto;
         overflow-x: hidden;
     }

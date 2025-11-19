@@ -1,0 +1,218 @@
+#plans {
+    display: grid;
+    gap: 3rem;
+    padding-block: 6.5rem;
+
+    & h2 {
+        font: 700 1.5rem var(--font-family);
+        color: var(--text-body);
+        max-width: 14rem;
+        text-align: center;
+        justify-self: center;
+    }
+
+    & .cards {
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        scrollbar-width: none;
+
+        & .card {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background: var(--shape-base);
+            border-radius: 1.5rem;
+            border: 1px solid var(--shape-stroke);
+            height: 25rem;
+            min-width: 18rem;
+
+            & .top {
+                display: flex;
+                align-items: center;
+
+                & span {
+                    font: var(--title-xs);
+                    color: var(--blue-light);
+
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            & .price {
+                display: flex;
+                align-items: baseline;
+                margin-bottom: .5rem;
+
+                & h2 {
+                    font: var(--title-md);
+                }
+
+                & h3 {
+                    font: var(--title-xs);
+                    color: var(--text-body);
+                }
+
+            }
+
+            & .per-year {
+                font: var(--body-sm);
+                color: var(--text-label);
+                margin-bottom: auto;
+            }
+
+            & ul {
+                display: grid;
+                gap: .75rem;
+
+                list-style: none;
+                padding-left: none;
+
+                & li {
+                    font: var(--body-xs);
+                    color: var(--text-body);
+                    display: flex;
+                    gap: .5rem;
+
+
+                    &::before {
+                        content: "";
+                        display: flex;
+                        height: .875rem;
+                        width: .875rem;
+                        background-image: url(../assets/star-blue.svg);
+                        background-size: cover;
+                    }
+                }
+            }
+
+            & button {
+                padding-block: .75rem;
+                border-radius: .5rem;
+                background: var(--blue-dark);
+                border: none;
+
+                font: var(--button);
+                color: var(--text-title);
+
+                margin-top: 1.5rem;
+
+                cursor: pointer;
+            }
+        }
+
+        & .card.popular {
+            & .top span:nth-child(2) {
+                padding: .5625rem 1.25rem;
+                background: var(--shape-stroke);
+                border-radius: 999px;
+            }
+
+            & ul li::before {
+                background-image: url(../assets/star.svg);
+            }
+
+            & button {
+                background: var(--pink-dark);
+            }
+        }
+    }
+}
+
+
+
+
+
+@media (width >=90em) {
+    @keyframes appear-card-1 {
+
+        0%,
+        50% {
+            opacity: 0;
+            ;
+        }
+
+        100% {
+            right: 99%;
+            top: 2.5rem;
+            transform: rotate(-8deg);
+        }
+    }
+
+    @keyframes appear-card-3 {
+
+        0%,
+        50% {
+            opacity: 0;
+            ;
+        }
+
+        100% {
+            left: 99%;
+            top: 2.5rem;
+            transform: rotate(8deg);
+            z-index: 0;
+        }
+    }
+
+
+    #plans {
+        padding: 29.5rem 12.1875rem 19.25rem;
+
+        &>h2 {
+            font: var(--title-sm);
+            min-width: 18.375rem;
+        }
+
+        & .cards {
+            position: relative;
+            overflow-x: visible;
+            margin: 13.8rem 0 30.2rem;
+
+            & .card:nth-child(1) {
+                animation: appear-card-1 1s forwards;
+            }
+
+            & .card:nth-child(2) {
+                z-index: 1;
+            }
+
+            & .card:nth-child(3) {
+                animation: appear-card-3 1s forwards;
+            }
+
+            & .card {
+                position: absolute;
+                max-width: 18rem;
+
+                transition: 400ms;
+
+                &:hover {
+                    background-color: var(--shape-hover);
+                    z-index: 1;
+                    border: var(--shape-hover);
+                    transform: translateY(-1rem);
+                    -webkit-box-shadow: 0 0 9rem .4rem hsla(202, 65%, 39%, 0.364);
+                    box-shadow: 0 0 9rem .4rem #2375a434;
+
+                    transition: 400ms;
+                }
+
+                &.popular::before {
+                    content: "";
+                    position: absolute;
+                    display: flex;
+                    width: 4.5rem;
+                    height: 5rem;
+                    background-image: url("../assets/pink-rabbit.svg");
+                    background-size: cover;
+                    bottom: 100%;
+                }
+            }
+        }
+    }
+
+
+
+
+}
